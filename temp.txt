@@ -1,0 +1,95 @@
+(base) hippolyte@MacBook-Pro-Olivier AmundiGemScrapper % tree -I "venv"
+.
+├── README.md
+├── common
+│   ├── __init__.py
+│   ├── __pycache__
+│   │   ├── __init__.cpython-313.pyc
+│   │   └── driver_setup.cpython-313.pyc
+│   ├── db_manager.py
+│   └── driver_setup.py
+├── diagnose_content.py
+├── diagnose_structure.py
+├── docker-compose.yml
+├── init_db.py
+├── main.py
+├── requirements.txt
+└── scrapers
+    ├── __init__.py
+    ├── __pycache__
+    │   └── __init__.cpython-313.pyc
+    ├── afg
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-313.pyc
+    │   │   ├── get_content.cpython-313.pyc
+    │   │   └── get_list.cpython-313.pyc
+    │   ├── get_content.py
+    │   ├── get_list.py
+    │   └── results.json
+    ├── afm
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-313.pyc
+    │   │   ├── get_content.cpython-313.pyc
+    │   │   └── get_list.cpython-313.pyc
+    │   ├── get_content.py
+    │   ├── get_list.py
+    │   └── results.json
+    ├── alfi
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-313.pyc
+    │   │   ├── get_content.cpython-313.pyc
+    │   │   └── get_list.cpython-313.pyc
+    │   ├── get_content.py
+    │   ├── get_list.py
+    │   └── results.json
+    ├── amf
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-313.pyc
+    │   │   ├── get_content.cpython-313.pyc
+    │   │   └── get_list.cpython-313.pyc
+    │   ├── get_content.py
+    │   ├── get_list.py
+    │   └── results.json
+    ├── cbi
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-313.pyc
+    │   │   ├── get_content.cpython-313.pyc
+    │   │   └── get_list.cpython-313.pyc
+    │   ├── get_content.py
+    │   ├── get_list.py
+    │   └── results.json
+    ├── cssf
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-313.pyc
+    │   │   ├── get_content.cpython-313.pyc
+    │   │   └── get_list.cpython-313.pyc
+    │   ├── get_content.py
+    │   ├── get_list.py
+    │   └── results.json
+    ├── esma
+    │   ├── __init__.py
+    │   ├── __pycache__
+    │   │   ├── __init__.cpython-313.pyc
+    │   │   ├── get_content.cpython-313.pyc
+    │   │   └── get_list.cpython-313.pyc
+    │   ├── get_content.py
+    │   ├── get_list.py
+    │   └── results.json
+    └── finma
+        ├── __init__.py
+        ├── __pycache__
+        │   ├── __init__.cpython-313.pyc
+        │   ├── get_content.cpython-313.pyc
+        │   └── get_list.cpython-313.pyc
+        ├── get_content.py
+        ├── get_list.py
+        └── results.json
+
+21 directories, 70 files
+(base) hippolyte@MacBook-Pro-Olivier AmundiGemScrapper %

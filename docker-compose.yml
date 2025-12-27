@@ -1,0 +1,37 @@
+services:
+  
+  mysql:
+    image: mysql:8.0
+    container_name: amundi_mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: no
+    environment:
+      MYSQL_DATABASE: amundi
+      MYSQL_USER: dhippo_user
+      MYSQL_PASSWORD: dhippo_password
+      MYSQL_ROOT_PASSWORD: napoleon
+    volumes:
+      - amundi_db:/var/lib/mysql
+    ports:
+      - 3307:3306
+    networks:
+      - amundi_network
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: amundi_phpmyadmin
+    restart: no
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - 8080:80
+    networks:
+      - amundi_network
+
+volumes:
+  amundi_db:
+
+networks:
+  amundi_network:
