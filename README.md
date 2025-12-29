@@ -9,6 +9,7 @@ Ce projet collecte, indexe et permet d'interroger en langage naturel les publica
 - **Base MySQL** pour le stockage structuré
 - **ChromaDB** pour la recherche vectorielle
 - **OpenAI Embeddings** pour la compréhension sémantique
+- **Interface web Streamlit** pour interroger la base en direct
 
 ---
 
@@ -75,6 +76,11 @@ AmundiGemScrapper/
 ├── data/                      # Données générées
 │   ├── json/                 # JSON des scrapers
 │   └── chroma/               # Base vectorielle
+│
+├── web-app/                   # Interface web Streamlit (UI + services)
+│   ├── app.py                # Entrée principale Streamlit
+│   ├── services/             # Clients OpenAI/Chroma + logique RAG
+│   └── ui/                   # Layout et composants UI réutilisables
 │
 └── docker-compose.yml         # MySQL + PHPMyAdmin
 ```
@@ -148,6 +154,23 @@ python scripts/run_vectorization.py
 python scripts/search_rag.py "What is ESMA's position on crypto?"
 ```
 
+### Interface Web (Streamlit)
+
+L'application web propose une interface graphique pour poser des questions, filtrer par source et visualiser les sources utilisées. Elle est désormais structurée dans `web-app/` (services, composants UI) pour faciliter la maintenance.
+
+```bash
+# Lancer l'interface (depuis la racine du projet)
+streamlit run web-app/app.py
+
+# L'application démarre par défaut sur http://localhost:8501
+```
+
+**Fonctionnalités principales :**
+- Zone de question avec sélection de la source et du nombre de documents
+- Génération de réponse avec citation des sources utilisées
+- Vue détaillée des documents retournés par ChromaDB
+- Métriques en direct (articles, chunks) depuis MySQL
+
 ### Commandes Utiles
 
 ```bash
@@ -204,7 +227,7 @@ python scripts/run_vectorization.py
 - [x] Stockage MySQL
 - [x] Vectorisation ChromaDB
 - [x] Recherche RAG
-- [ ] Interface Streamlit
+- [x] Interface Streamlit
 - [ ] Génération de réponses (GPT-4)
 - [ ] Scraping incrémental (nouveaux articles)
 - [ ] Multi-tenancy (plusieurs utilisateurs)
