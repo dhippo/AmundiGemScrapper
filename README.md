@@ -77,6 +77,11 @@ AmundiGemScrapper/
 │   ├── json/                 # JSON des scrapers
 │   └── chroma/               # Base vectorielle
 │
+├── web-app/                   # Interface web Streamlit (UI + services)
+│   ├── app.py                # Entrée principale Streamlit
+│   ├── services/             # Clients OpenAI/Chroma + logique RAG
+│   └── ui/                   # Layout et composants UI réutilisables
+│
 └── docker-compose.yml         # MySQL + PHPMyAdmin
 ```
 
@@ -151,11 +156,11 @@ python scripts/search_rag.py "What is ESMA's position on crypto?"
 
 ### Interface Web (Streamlit)
 
-L'application web propose une interface graphique pour poser des questions, filtrer par source et visualiser les sources utilisées.
+L'application web propose une interface graphique pour poser des questions, filtrer par source et visualiser les sources utilisées. Elle est désormais structurée dans `web-app/` (services, composants UI) pour faciliter la maintenance.
 
 ```bash
 # Lancer l'interface (depuis la racine du projet)
-streamlit run app.py
+streamlit run web-app/app.py
 
 # L'application démarre par défaut sur http://localhost:8501
 ```
